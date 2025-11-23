@@ -1,0 +1,8 @@
+@tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+/* Small helper to ensure body background matches dark mode toggle default */
+html, body, #root {
+  height: 100%;
+}
