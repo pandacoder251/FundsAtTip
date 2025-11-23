@@ -57,18 +57,10 @@ const ThemeToggle = ({ isDark, toggleDark }) => (
     </button>
 );
 
-/**
- * Handles the interaction with the Gemini API using exponential backoff.
- * This function is used by both the Chatbot and the new AI features.
- * @param {string} prompt The user's query.
- * @param {function} onResponse Callback function for successful response.
- * @param {function} onError Callback function for errors.
- * @param {string} systemPrompt The system instruction to guide the model's persona.
- * @param {boolean} useGrounding Whether to enable Google Search grounding.
- */
+/* Chat Bot*/
 const callGeminiApi = async (prompt, onResponse, onError, systemPrompt, useGrounding = true) => {
-    const defaultSystemPrompt = "You are a friendly, concise, and helpful financial assistant named 'Wisbee'. Provide short, actionable advice or information based on financial markets, avoiding overly complex jargon. Always answer concisely.";
-    const apiKey = "";
+    const defaultSystemPrompt = "You are a friendly, concise, and helpful financial assistant named 'Kuber'. Provide short, actionable advice or information based on financial markets, avoiding overly complex jargon. Always answer concisely.";
+    const apiKey = ""; /*Api*/
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
     const payload = {
@@ -195,7 +187,7 @@ const GeminiChatbot = () => {
                     {/* Header */}
                     <div className="p-4 border-b border-gray-200 dark:border-gray-700 bg-indigo-600 rounded-t-xl flex items-center">
                         <Icon className="w-5 h-5 mr-2 text-white fill-current" path={robotIconPath} />
-                        <h3 className="text-lg font-bold text-white" style={{ fontFamily: 'var(--font-heading)' }}>Chat with Wisbee</h3>
+                        <h3 className="text-lg font-bold text-white" style={{ fontFamily: 'var(--font-heading)' }}>Chat with Kuber</h3>
                     </div>
 
                     {/* Chat History */}
